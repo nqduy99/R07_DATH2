@@ -2,8 +2,7 @@
 create database DATH2
 go
 use DATH2
---drop table NguoiDung
-
+--drop table KhachHang
 create table KhachHang(
 	MaKH varchar(10),
 	HoTen nvarchar(50),
@@ -17,6 +16,7 @@ create table KhachHang(
 	primary key (MaKH)
 )
 
+--drop table NhanVien
 create table NhanVien(
 	MaNV varchar(10),
 	HoTen_NV nvarchar(50),
@@ -74,6 +74,24 @@ create table CT_DonHang (
 	ThanhTien float null,
 	primary key(MaDH, MaSP)
 )
+
+create table PhieuNhapHang (
+	MaPNH varchar(10),
+	NgayNhap date,
+	MaNV varchar(10),
+	TongTienNhap float,
+	primary key(MaPNH)
+)
+
+create table CT_PhieuNhap (
+	MaPNH varchar(10),
+	MaSP varchar(10),
+	SoLuongNhap int,
+	GiaNhap float,
+	ThanhTienNhap float null,
+	primary key(MaPNH, MaSP)
+)
+
 -- Tạo khóa ngoại
 Alter table Account
 add constraint fk_AC_KH	
@@ -99,6 +117,18 @@ Alter table SanPham
 add constraint fk_SP_LSP
 	foreign key(MaLSP)
 	references LoaiSanPham(MaLSP);
+Alter table PhieuNhapHang
+add constraint fk_PNH_NV	
+	foreign key(MaNV)
+	references NhanVien(MaNV);
+Alter table CT_PhieuNhap
+add constraint fk_CTPN_PNH	
+	foreign key(MaPNH)
+	references PhieuNhapHang(MaPNH);
+Alter table CT_PhieuNhap
+add constraint fk_CTPN_SP	
+	foreign key(MaSP)
+	references SanPham(MaSP);
 
 --Cài Trigger
 --Cập nhật giá bán bằng giá sản phẩm
@@ -111,7 +141,7 @@ begin
 	set GiaBan = s.Gia from SanPham s, CT_DonHang c join inserted i on c.MaSP = i.MaSP and c.MaDH = i.MaDH where s.MaSP = c.MaSP
 end
 go
---Tính thành tiền của từng chi tiết hóa đơn
+--Tính thành tiền của từng chi tiết Đơn Hàng
 Create trigger ThanhTien_CTDH on CT_DonHang
 for INSERT
 as 
@@ -121,7 +151,7 @@ begin
 end
 go
 
---Tổng tiền của hóa đơn
+--Tổng tiền của Đơn Hàng
 Create trigger TongTien_DH on CT_DonHang
 for INSERT
 as 
@@ -131,6 +161,25 @@ begin
 	select * from inserted
 end
 go
+--Tính thành tiền của từng chi tiết nhập hàng
+Create trigger ThanhTien_CTPN on CT_PhieuNhap
+for INSERT
+as 
+begin
+	update CT_PhieuNhap
+	set ThanhTienNhap = SoLuongNhap * GiaNhap
+end
+go
+--Tổng tiền của Phiếu Nhập Hàng
+Create trigger TongTien_PNH on CT_PhieuNhap
+for INSERT
+as 
+begin
+	update PhieuNhapHang 
+	set TongTienNhap = TongTienNhap + (select c.ThanhTienNhap from CT_PhieuNhap c, inserted i where c.MaPNH = h.MaPNH and i.MaSP = c.MaSP) from PhieuNhapHang h join inserted i on h.MaPNH = i.MaPNH
+	select * from inserted
+end
+go
 
---Them du lieu
-INSERT INTO NguoiDung(MaND,HoTen,NgSinh,SoNha,Duong,Phuong,Quan,Tpho,DienThoai,VaiTro) VALUES ('1','Peter Nguyen','1999-08-09',159,'Xo Viet','Thanh Cong','Buon Ma Thuot','DakLak','0912345678','admin')
+--Them du lieu mau
+INSERT INTO KhachHang(MaKH,HoTen,NgSinh,SoNha,Duong,Phuong,Quan,Tpho,DienThoai) VALUES ('1','Peter Nguyen','1999-08-09',159,'Xo Viet','Thanh Cong','Buon Ma Thuot','DakLak','0912345678')
