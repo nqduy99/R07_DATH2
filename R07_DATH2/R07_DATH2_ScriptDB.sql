@@ -1,10 +1,12 @@
-﻿create database DATH2
+﻿--drop database DATH2
+create database DATH2
 go
 use DATH2
+--drop table NguoiDung
 
-create table NguoiDung(
-	MaND varchar(10),
-	HoTen nvarchar(10),
+create table KhachHang(
+	MaKH varchar(10),
+	HoTen nvarchar(50),
 	NgSinh date,
 	SoNha int,
 	Duong nvarchar(30),
@@ -12,13 +14,35 @@ create table NguoiDung(
 	Quan nvarchar(30),
 	Tpho nvarchar(30),
 	DienThoai varchar(15),
-	VaiTro varchar(10),--Vai tro co the la admin hoac khach hang
+	primary key (MaKH)
+)
+
+create table NhanVien(
+	MaNV varchar(10),
+	HoTen_NV nvarchar(50),
+	ChucVu nvarchar(50),
+	NgSinh_NV date,
+	SoNha_NV int,
+	Duong_NV nvarchar(30),
+	Phuong_NV nvarchar(30),
+	Quan_NV nvarchar(30),
+	Tpho_NV nvarchar(30),
+	DienThoai_NV varchar(15),
+	primary key (MaNV)
+)
+
+
+create table Account(
+	MaND varchar(10),
+	Username varchar(20),
+	Password varchar(50),
+	Vaitro varchar(20)
 	primary key (MaND)
 )
 
 create table DonHang(
 	MaDH varchar(10),
-	MaND varchar(10),
+	MaKH varchar(10),
 	NgayLap date,
 	TongTien float,
 	primary key (MaDH)
@@ -51,14 +75,22 @@ create table CT_DonHang (
 	primary key(MaDH, MaSP)
 )
 -- Tạo khóa ngoại
-Alter table DonHang
-add constraint fk_DH_ND	
+Alter table Account
+add constraint fk_AC_KH	
 	foreign key(MaND)
-	references KhachHang(MaND);
+	references KhachHang(MaKH);
+Alter table Account
+add constraint fk_AC_NV	
+	foreign key(MaND)
+	references NhanVien(MaNV);
+Alter table DonHang
+add constraint fk_DH_KH	
+	foreign key(MaKH)
+	references KhachHang(MaKH);
 Alter table CT_DonHang
 add constraint fk_CTDH_DH	
 	foreign key(MaDH)
-	references HoaDon(MaDH);
+	references DonHang(MaDH);
 Alter table CT_DonHang
 add constraint fk_CTDH_SP
 	foreign key(MaSP)
@@ -99,3 +131,6 @@ begin
 	select * from inserted
 end
 go
+
+--Them du lieu
+INSERT INTO NguoiDung(MaND,HoTen,NgSinh,SoNha,Duong,Phuong,Quan,Tpho,DienThoai,VaiTro) VALUES ('1','Peter Nguyen','1999-08-09',159,'Xo Viet','Thanh Cong','Buon Ma Thuot','DakLak','0912345678','admin')
