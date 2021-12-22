@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace R07_DATH2.EcommerceWebsite
 {
-    public partial class Home : Form
+    public partial class AdminDashboard : Form
     {
-        public Home()
+        public AdminDashboard()
         {
             InitializeComponent();
         }
