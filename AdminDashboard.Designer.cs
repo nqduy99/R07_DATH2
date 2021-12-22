@@ -1,5 +1,4 @@
-﻿
-namespace R07_DATH2.EcommerceWebsite
+﻿namespace R07_DATH2
 {
     partial class AdminDashboard
     {
@@ -29,33 +28,12 @@ namespace R07_DATH2.EcommerceWebsite
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(350, 62);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Hello";
-            // 
-            // AdminDashboard
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 332);
-            this.Controls.Add(this.label1);
-            this.Name = "AdminDashboard";
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Text = "AdminDashboard";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
     }
 }

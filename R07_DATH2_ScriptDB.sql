@@ -21,7 +21,7 @@ create table KhachHang(
 create table NhanVien(
 	MaNV varchar(10),-- NV...
 	HoTen_NV nvarchar(50),
-	ChucVu nvarchar(50),-- quantri,quanly,nhansu
+	ChucVu nvarchar(50),-- Quản trị, Quản lý, Nhân sự
 	NgSinh_NV date,
 	SoNha_NV int,
 	Duong_NV nvarchar(30),
@@ -39,7 +39,7 @@ create table Account_KH(
 	Password varchar(50),
 	primary key (MaKH)
 )
-
+insert into Account_NV values ('1','NV1','a','quan ly')
 create table Account_NV(
 	MaNV varchar(10),
 	Username_NV varchar(20),
@@ -228,3 +228,13 @@ begin
 	where NV.MaNV = i.MaNV)
 end
 
+--Them du lieu mau
+INSERT INTO KhachHang(MaKH,HoTen,NgSinh,SoNha,Duong,Phuong,Quan,Tpho,DienThoai) VALUES ('1','Peter Nguyen','1999-08-09',159,'Xo Viet','Thanh Cong','Buon Ma Thuot','DakLak','0912345678')
+INSERT INTO KhachHang(MaKH,HoTen,NgSinh,SoNha,Duong,Phuong,Quan,Tpho,DienThoai) VALUES ('2','Nguyen Ngoc Anh','2000-01-08',234,'Nguyen Tat Thanh','Phuong 2','Quan 1','TP Ho Chi Minh','084245678')
+INSERT INTO NhanVien(MaNV,HoTen_NV,ChucVu,NgSinh_NV,SoNha_NV,Duong_NV,Phuong_NV,Quan_NV,Tpho_NV,DienThoai_NV,Luong) VALUES ('1','Peter Nguyen','QuanLy','1999-08-09',159,'Xo Viet','Thanh Cong','Buon Ma Thuot','DakLak','0912345678',0)
+insert into LSLuong values ('1',1000000,getdate())
+insert into LSLuong values ('1',1200000,getdate())
+insert into LSLuong values ('1',1300000,getdate())
+
+select * from NhanVien
+select * from LSLuong

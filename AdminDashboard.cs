@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace R07_DATH2.EcommerceWebsite
+namespace R07_DATH2
 {
     public partial class AdminDashboard : Form
     {
