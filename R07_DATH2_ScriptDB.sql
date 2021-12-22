@@ -28,24 +28,42 @@ create table NhanVien(
 	Quan_NV nvarchar(30),
 	Tpho_NV nvarchar(30),
 	DienThoai_NV varchar(15),
+	Luong float,--Bằng 0
 	primary key (MaNV)
 )
-
 
 create table Account(
 	MaND varchar(10),
 	Username varchar(20),
 	Password varchar(50),
-	Vaitro varchar(20)
+	
 	primary key (MaND)
 )
 
+create table Account_NV(
+	MaNV varchar(10),
+	Username_NV varchar(20),
+	Password_NV varchar(50),
+	Vaitro varchar(20)
+	primary key (MaNV)
+)
+--drop table DonHang
 create table DonHang(
 	MaDH varchar(10),
 	MaKH varchar(10),
+	MaNV varchar(10),
 	NgayLap date,
-	TongTien float,
+	TongTien float,--Bằng 0
 	primary key (MaDH)
+)
+create table CT_DonHang (
+	MaDH varchar(10),
+	MaSP varchar(10),
+	SoLuong int,
+	GiaBan float,
+	GiaGiam float,
+	ThanhTien float,--Bằng 0
+	primary key(MaDH, MaSP)
 )
 
 create table SanPham(
@@ -65,21 +83,11 @@ create table LoaiSanPham(
 	Primary key(MaLSP)
 )
 
-create table CT_DonHang (
-	MaDH varchar(10),
-	MaSP varchar(10),
-	SoLuong int,
-	GiaBan float,
-	GiaGiam float,
-	ThanhTien float null,
-	primary key(MaDH, MaSP)
-)
-
 create table PhieuNhapHang (
 	MaPNH varchar(10),
 	NgayNhap date,
 	MaNV varchar(10),
-	TongTienNhap float,
+	TongTienNhap float,--Bằng 0
 	primary key(MaPNH)
 )
 
@@ -88,23 +96,45 @@ create table CT_PhieuNhap (
 	MaSP varchar(10),
 	SoLuongNhap int,
 	GiaNhap float,
-	ThanhTienNhap float null,
+	ThanhTienNhap float,--Bằng 0
 	primary key(MaPNH, MaSP)
 )
+
+create table Luong(
+	MaNV varchar(10),
+	Luong float,
+	NgayCapNhat date,
+	primary key(MaNV, Luong)
+)
+
+Create table Thuong(
+	MaNV varchar(10),
+	Thuong float,
+	Ngay date,
+	primary key (MaNV,Thuong)
+)
+alter table Thuong
+add CONSTRAINT fk_Thuong_NV
+foreign key (MaNV)
+references NhanVien(MaNV)
 
 -- Tạo khóa ngoại
 Alter table Account
 add constraint fk_AC_KH	
 	foreign key(MaND)
 	references KhachHang(MaKH);
-Alter table Account
+Alter table Account_NV
 add constraint fk_AC_NV	
-	foreign key(MaND)
+	foreign key(MaNV)
 	references NhanVien(MaNV);
 Alter table DonHang
 add constraint fk_DH_KH	
 	foreign key(MaKH)
 	references KhachHang(MaKH);
+Alter table DonHang
+add constraint fk_DH_NV	
+	foreign key(MaNV)
+	references KhachHang(MaNV);
 Alter table CT_DonHang
 add constraint fk_CTDH_DH	
 	foreign key(MaDH)
@@ -129,6 +159,10 @@ Alter table CT_PhieuNhap
 add constraint fk_CTPN_SP	
 	foreign key(MaSP)
 	references SanPham(MaSP);
+Alter table LichSuLuong
+add CONSTRAINT fk_Luong_NV
+foreign key (MaNV)
+references NhanVien(MaNV)
 
 --Cài Trigger
 --Cập nhật giá bán bằng giá sản phẩm
@@ -183,3 +217,19 @@ go
 
 --Them du lieu mau
 INSERT INTO KhachHang(MaKH,HoTen,NgSinh,SoNha,Duong,Phuong,Quan,Tpho,DienThoai) VALUES ('1','Peter Nguyen','1999-08-09',159,'Xo Viet','Thanh Cong','Buon Ma Thuot','DakLak','0912345678')
+INSERT INTO KhachHang(MaKH,HoTen,NgSinh,SoNha,Duong,Phuong,Quan,Tpho,DienThoai) VALUES ('2','Nguyen Ngoc Anh','2000-01-08',234,'Nguyen Tat Thanh','Phuong 2','Quan 1','TP Ho Chi Minh','084245678')
+INSERT INTO NhanVien(MaNV,HoTen_NV,ChucVu,NgSinh_NV,SoNha_NV,Duong_NV,Phuong_NV,Quan_NV,Tpho_NV,DienThoai_NV) VALUES ('1','Peter Nguyen','QuanLy','1999-08-09',159,'Xo Viet','Thanh Cong','Buon Ma Thuot','DakLak','0912345678')
+INSERT INTO Account_NV(MaNV,Username_NV,Password_NV,VaiTro) VALUES('1','nqduy','123456','Admin')
+INSERT INTO Account_NV(MaNV,Username_NV,Password_NV,VaiTro) VALUES('2','nguyenngocanh','123456','User')
+
+--Cập nhật Lương Nhân Viên
+create trigger updateLuong
+on Luong
+for insert
+as
+begin
+	update NhanVien
+	set Luong = (select i.Luong
+	from inserted i, NhanVien NV
+	where NV.MaNV = i.MaNV)
+end
