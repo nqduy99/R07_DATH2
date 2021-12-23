@@ -22,6 +22,7 @@ namespace R07_DATH2
 
         private void Login_Load(object sender, EventArgs e)
         {
+            this.SetDesktopLocation(200, 100);
             string conString = ConfigurationManager.ConnectionStrings["DoAnTH2"].ConnectionString.ToString();
             cnn = new SqlConnection(conString);
             cnn.Open();
