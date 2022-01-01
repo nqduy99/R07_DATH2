@@ -78,5 +78,10 @@ namespace R07_DATH2
                 MessageBox.Show("Lối kết nối");
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

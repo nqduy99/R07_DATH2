@@ -237,8 +237,10 @@ insert into LSLuong values ('1',1200000,getdate())
 insert into LSLuong values ('1',1300000,getdate())
 insert into Account_NV values ('1','NV1','123456','Admin')
 insert into SanPham(MaSP,TenSP,SoLuongTon,Mota,Gia,HanSuDung,MaLSP) VALUES('SP1','Cocacola',100,'Nuoc ngot',15000,'2022-12-31','LSP1')
+insert into SanPham(MaSP,TenSP,SoLuongTon,Mota,Gia,HanSuDung,MaLSP) VALUES('SP2','Banh Oreo',150,'Banh ngot',20000,'2022-12-31','LSP2')
 insert into LoaiSanPham(MaLSP,TenLSP) VALUES('LSP1','Nuoc Ngot Co Ga')
 
 select * from NhanVien
-select * from LSLuong
+select * from LoaiSanPham
+select * from SanPham
 select * from Account_NV
