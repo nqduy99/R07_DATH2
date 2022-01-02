@@ -1,5 +1,5 @@
 ﻿
-namespace R07_DATH2.NhanSu
+namespace R07_DATH2.PhanHeNhanSu
 {
     partial class ThongKeDH
     {
@@ -36,10 +36,10 @@ namespace R07_DATH2.NhanSu
             this.lb_nam = new System.Windows.Forms.Label();
             this.cbb_Thang = new System.Windows.Forms.ComboBox();
             this.lb_thang = new System.Windows.Forms.Label();
+            this.dtp_Ngay = new System.Windows.Forms.DateTimePicker();
             this.lb_ngay = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbb_Loai = new System.Windows.Forms.ComboBox();
-            this.dtp_Ngay = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongke)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -68,11 +68,11 @@ namespace R07_DATH2.NhanSu
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox1.Controls.Add(this.dtp_Ngay);
             this.groupBox1.Controls.Add(this.tb_nam);
             this.groupBox1.Controls.Add(this.lb_nam);
             this.groupBox1.Controls.Add(this.cbb_Thang);
             this.groupBox1.Controls.Add(this.lb_thang);
+            this.groupBox1.Controls.Add(this.dtp_Ngay);
             this.groupBox1.Controls.Add(this.lb_ngay);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cbb_Loai);
@@ -117,6 +117,14 @@ namespace R07_DATH2.NhanSu
             this.lb_thang.TabIndex = 4;
             this.lb_thang.Text = "Chọn tháng:";
             // 
+            // dtp_Ngay
+            // 
+            this.dtp_Ngay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_Ngay.Location = new System.Drawing.Point(133, 65);
+            this.dtp_Ngay.Name = "dtp_Ngay";
+            this.dtp_Ngay.Size = new System.Drawing.Size(146, 22);
+            this.dtp_Ngay.TabIndex = 3;
+            // 
             // lb_ngay
             // 
             this.lb_ngay.AutoSize = true;
@@ -146,19 +154,6 @@ namespace R07_DATH2.NhanSu
             this.cbb_Loai.TabIndex = 0;
             this.cbb_Loai.SelectedIndexChanged += new System.EventHandler(this.cbb_Loai_SelectedIndexChanged);
             // 
-            // dtp_Ngay
-            // 
-            this.dtp_Ngay.CustomFormat = "dd/MM/yyyy";
-            this.dtp_Ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_Ngay.Location = new System.Drawing.Point(133, 65);
-            this.dtp_Ngay.Margin = new System.Windows.Forms.Padding(4);
-            this.dtp_Ngay.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
-            this.dtp_Ngay.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dtp_Ngay.Name = "dtp_Ngay";
-            this.dtp_Ngay.Size = new System.Drawing.Size(139, 22);
-            this.dtp_Ngay.TabIndex = 8;
-            this.dtp_Ngay.Value = new System.DateTime(2021, 3, 27, 0, 0, 0, 0);
-            // 
             // ThongKeDH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -186,9 +181,9 @@ namespace R07_DATH2.NhanSu
         private System.Windows.Forms.Label lb_nam;
         private System.Windows.Forms.ComboBox cbb_Thang;
         private System.Windows.Forms.Label lb_thang;
+        private System.Windows.Forms.DateTimePicker dtp_Ngay;
         private System.Windows.Forms.Label lb_ngay;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbb_Loai;
-        private System.Windows.Forms.DateTimePicker dtp_Ngay;
     }
 }

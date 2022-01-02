@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace R07_DATH2.NhanSu
+namespace R07_DATH2.PhanHeNhanSu
 {
     public partial class ThongKeDH : Form
     {
@@ -19,7 +19,6 @@ namespace R07_DATH2.NhanSu
             InitializeComponent();
         }
         SqlConnection cnn;
-
         private void ThongKeDH_Load(object sender, EventArgs e)
         {
             string conString = ConfigurationManager.ConnectionStrings["DoAnTH2"].ConnectionString.ToString();
@@ -46,7 +45,7 @@ namespace R07_DATH2.NhanSu
 
         private void cbb_Loai_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbb_Loai.SelectedIndex == 0) // ngày
+            if (cbb_Loai.SelectedIndex == 0) // ngày
             {
                 lb_ngay.Show();
                 dtp_Ngay.Show();
@@ -54,8 +53,8 @@ namespace R07_DATH2.NhanSu
                 cbb_Thang.Hide();
                 lb_nam.Hide();
                 tb_nam.Hide();
-            }    
-            if(cbb_Loai.SelectedIndex == 1) // tháng
+            }
+            if (cbb_Loai.SelectedIndex == 1) // tháng
             {
                 lb_ngay.Hide();
                 dtp_Ngay.Hide();
@@ -77,7 +76,7 @@ namespace R07_DATH2.NhanSu
 
         private void btn_xem_Click(object sender, EventArgs e)
         {
-            if(cbb_Loai.SelectedIndex == 0) // ngày
+            if (cbb_Loai.SelectedIndex == 0) // ngày
             {
                 string sqlselect_ngay = "select * from DonHang where NgayLap = '" + dtp_Ngay.Value.Year + "-" + dtp_Ngay.Value.Month + "-" + dtp_Ngay.Value.Day + "'";
                 SqlCommand cmd = new SqlCommand();
@@ -94,9 +93,9 @@ namespace R07_DATH2.NhanSu
                 //}
                 dr_day.Close();
             }
-            if(cbb_Loai.SelectedIndex == 1) // thang
+            if (cbb_Loai.SelectedIndex == 1) // thang
             {
-                string sqlselect_thang = "select * from DonHang where month(NgayLap) = '" + cbb_Thang.Text + "' and year(NgayLap) = '"+tb_nam.Text+"'";
+                string sqlselect_thang = "select * from DonHang where month(NgayLap) = '" + cbb_Thang.Text + "' and year(NgayLap) = '" + tb_nam.Text + "'";
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandText = sqlselect_thang;
                 cmd.Connection = cnn;
@@ -106,7 +105,7 @@ namespace R07_DATH2.NhanSu
                 dgv_thongke.DataSource = dt;
                 dr_thang.Close();
             }
-            if(cbb_Loai.SelectedIndex == 2)// nam
+            if (cbb_Loai.SelectedIndex == 2)// nam
             {
                 string sqlselect_nam = "select * from DonHang where year(NgayLap) = '" + tb_nam.Text + "'";
                 SqlCommand cmd = new SqlCommand();
@@ -117,7 +116,7 @@ namespace R07_DATH2.NhanSu
                 dt.Load(dr_nam);
                 dgv_thongke.DataSource = dt;
                 dr_nam.Close();
-            }
+            } 
         }
     }
 }

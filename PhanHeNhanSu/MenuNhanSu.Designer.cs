@@ -1,7 +1,7 @@
 ﻿
-namespace R07_DATH2.NhanSu
+namespace R07_DATH2.PhanHeNhanSu
 {
-    partial class NhanSu
+    partial class MenuNhanSu
     {
         /// <summary>
         /// Required designer variable.
@@ -86,9 +86,9 @@ namespace R07_DATH2.NhanSu
             // btn_doanhso
             // 
             this.btn_doanhso.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btn_doanhso.Location = new System.Drawing.Point(246, 212);
+            this.btn_doanhso.Location = new System.Drawing.Point(260, 212);
             this.btn_doanhso.Name = "btn_doanhso";
-            this.btn_doanhso.Size = new System.Drawing.Size(199, 33);
+            this.btn_doanhso.Size = new System.Drawing.Size(169, 33);
             this.btn_doanhso.TabIndex = 2;
             this.btn_doanhso.Text = "Doanh số theo nhân viên";
             this.btn_doanhso.UseVisualStyleBackColor = false;
@@ -116,14 +116,14 @@ namespace R07_DATH2.NhanSu
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản lý nhân sự";
             // 
-            // NhanSu
+            // MenuNhanSu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox1);
-            this.Name = "NhanSu";
-            this.Text = "NhanSu";
+            this.Name = "MenuNhanSu";
+            this.Text = "MenuNhanSu";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

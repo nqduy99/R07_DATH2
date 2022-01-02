@@ -8,20 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace R07_DATH2.NhanSu
+namespace R07_DATH2.PhanHeNhanSu
 {
-    public partial class NhanSu : Form
+    public partial class MenuNhanSu : Form
     {
-        public NhanSu()
+        public MenuNhanSu()
         {
             InitializeComponent();
         }
 
         private void btn_thongkeDH_Click(object sender, EventArgs e)
         {
-            ThongKeDH dh = new ThongKeDH();
-            dh.Activate();
-            dh.Show();
+            ThongKeDH tkhd = new ThongKeDH();
+            tkhd.Activate();
+            tkhd.Show();
             this.Hide();
         }
 

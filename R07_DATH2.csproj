@@ -59,6 +59,24 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhanHeNhanSu\DoanhSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanHeNhanSu\DoanhSo.Designer.cs">
+      <DependentUpon>DoanhSo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhanHeNhanSu\MenuNhanSu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanHeNhanSu\MenuNhanSu.Designer.cs">
+      <DependentUpon>MenuNhanSu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhanHeNhanSu\ThongKeDH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanHeNhanSu\ThongKeDH.Designer.cs">
+      <DependentUpon>ThongKeDH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLySanPham\CapNhatSanPham.cs">
@@ -78,6 +96,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanHeNhanSu\DoanhSo.resx">
+      <DependentUpon>DoanhSo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanHeNhanSu\MenuNhanSu.resx">
+      <DependentUpon>MenuNhanSu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanHeNhanSu\ThongKeDH.resx">
+      <DependentUpon>ThongKeDH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

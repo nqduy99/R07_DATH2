@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace R07_DATH2.NhanSu
+namespace R07_DATH2.PhanHeNhanSu
 {
     public partial class DoanhSo : Form
     {
@@ -38,7 +38,6 @@ namespace R07_DATH2.NhanSu
             cbb_Loai.Items.Add("Tháng");
             cbb_Loai.Items.Add("Năm");
         }
-
         private void DoanhSo_FormClosing(object sender, FormClosingEventArgs e)
         {
             cnn.Close();
@@ -50,10 +49,9 @@ namespace R07_DATH2.NhanSu
             DataGridViewRow selectedRow = dgv_dsnv.Rows[index];
             tb_MaNV.Text = selectedRow.Cells[0].Value.ToString();
         }
-
-        private void btn_xemdso_Click(object sender, EventArgs e)
+        private void btn_xemdoanhso_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(cbb_Loai.Text))
+            if (string.IsNullOrWhiteSpace(cbb_Loai.Text))
             {
                 if (string.IsNullOrWhiteSpace(tb_MaNV.Text))
                 {
@@ -80,11 +78,11 @@ namespace R07_DATH2.NhanSu
             }
             else
             {
-                if(cbb_Loai.SelectedIndex == 0) // ngay
+                if (cbb_Loai.SelectedIndex == 0) // ngay
                 {
                     if (string.IsNullOrWhiteSpace(tb_MaNV.Text))
                     {
-                        string sqlselect = "select distinct nv.MaNV, nv.HoTen_NV,s.TongTien from(select MaNV, sum(TongTien) as TongTien, from DonHang where NgayLap = '"+dtp_ngay.Value.Year + "-" + dtp_ngay.Value.Month + "-" + dtp_ngay.Value.Day + "' group by MaNV) as s join NhanVien nv on s.MaNV = nv.MaNV";
+                        string sqlselect = "select distinct nv.MaNV, nv.HoTen_NV,s.TongTien from(select MaNV, sum(TongTien) as TongTien, from DonHang where NgayLap = '" + dtp_ngay.Value.Year + "-" + dtp_ngay.Value.Month + "-" + dtp_ngay.Value.Day + "' group by MaNV) as s join NhanVien nv on s.MaNV = nv.MaNV";
                         SqlCommand cmd = new SqlCommand();
                         cmd.CommandText = sqlselect;
                         cmd.Connection = cnn;
@@ -105,7 +103,7 @@ namespace R07_DATH2.NhanSu
                         dgv_doanhso.DataSource = dt_doanhso;
                     }
                 }
-                if(cbb_Loai.SelectedIndex == 1) // thang
+                if (cbb_Loai.SelectedIndex == 1) // thang
                 {
                     if (string.IsNullOrWhiteSpace(tb_MaNV.Text))
                     {
@@ -156,12 +154,11 @@ namespace R07_DATH2.NhanSu
                     }
                 }
             }
-            
         }
 
-        private void btn_xemCT_Click(object sender, EventArgs e)
+        private void btn_xemchitiet_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(cbb_Loai.Text))
+            if (string.IsNullOrWhiteSpace(cbb_Loai.Text))
             {
                 if (string.IsNullOrWhiteSpace(tb_MaNV.Text))
                 {
@@ -182,7 +179,7 @@ namespace R07_DATH2.NhanSu
             }
             else
             {
-                if(cbb_Loai.SelectedIndex == 0) // ngay
+                if (cbb_Loai.SelectedIndex == 0) // ngay
                 {
                     if (string.IsNullOrWhiteSpace(tb_MaNV.Text))
                     {
@@ -240,7 +237,7 @@ namespace R07_DATH2.NhanSu
                     }
                 }
             }
-            
+
         }
     }
 }
