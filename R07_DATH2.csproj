@@ -65,6 +65,12 @@
     <Compile Include="PhanHeNhanSu\DoanhSo.Designer.cs">
       <DependentUpon>DoanhSo.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhanHeNhanSu\Luong_Thuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanHeNhanSu\Luong_Thuong.Designer.cs">
+      <DependentUpon>Luong_Thuong.cs</DependentUpon>
+    </Compile>
     <Compile Include="PhanHeNhanSu\MenuNhanSu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PhanHeNhanSu\DoanhSo.resx">
       <DependentUpon>DoanhSo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanHeNhanSu\Luong_Thuong.resx">
+      <DependentUpon>Luong_Thuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhanHeNhanSu\MenuNhanSu.resx">
       <DependentUpon>MenuNhanSu.cs</DependentUpon>

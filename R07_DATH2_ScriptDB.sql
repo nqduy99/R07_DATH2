@@ -107,12 +107,11 @@ create table LSLuong(
 	NgayCapNhat date,
 	primary key(MaNV, Luong)
 )
-
 Create table LSThuong(
 	MaNV varchar(10),
 	Thuong float,
 	Ngay date,
-	primary key (MaNV,Thuong)
+	primary key (MaNV,Thuong,Ngay)
 )
 
 -- Tạo khóa ngoại
@@ -217,7 +216,7 @@ end
 go
 
 --Cập nhật Lương Nhân Viên
-Create trigger updateLuong
+create trigger updateLuong
 on LSLuong
 for insert
 as
@@ -225,20 +224,5 @@ begin
 	update NhanVien
 	set Luong = (select i.Luong
 	from inserted i, NhanVien NV
-	where NV.MaNV = i.MaNV)
+	where NV.MaNV = i.MaNV) from NhanVien nv, inserted i where nv.MaNV = i.MaNV
 end
-
---Them du lieu mau
-INSERT INTO KhachHang(MaKH,HoTen,NgSinh,SoNha,Duong,Phuong,Quan,Tpho,DienThoai) VALUES ('1','Peter Nguyen','1999-08-09',159,'Xo Viet','Thanh Cong','Buon Ma Thuot','DakLak','0912345678')
-INSERT INTO KhachHang(MaKH,HoTen,NgSinh,SoNha,Duong,Phuong,Quan,Tpho,DienThoai) VALUES ('2','Nguyen Ngoc Anh','2000-01-08',234,'Nguyen Tat Thanh','Phuong 2','Quan 1','TP Ho Chi Minh','084245678')
-INSERT INTO NhanVien(MaNV,HoTen_NV,ChucVu,NgSinh_NV,SoNha_NV,Duong_NV,Phuong_NV,Quan_NV,Tpho_NV,DienThoai_NV,Luong) VALUES ('1','Peter Nguyen','Admin','1999-08-09',159,'Xo Viet','Thanh Cong','Buon Ma Thuot','DakLak','0912345678',0)
-insert into LSLuong values ('1',1000000,getdate())
-insert into LSLuong values ('1',1200000,getdate())
-insert into LSLuong values ('1',1300000,getdate())
-insert into Account_NV values ('1','NV1','123456','Admin')
-insert into SanPham(MaSP,TenSP,SoLuongTon,Mota,Gia,HanSuDung,MaLSP) VALUES('SP1','Cocacola',100,'Nuoc ngot',15000,'2022-12-31','LSP1')
-insert into LoaiSanPham(MaLSP,TenLSP) VALUES('LSP1','Nuoc Ngot Co Ga')
-
-select * from NhanVien
-select * from LSLuong
-select * from Account_NV

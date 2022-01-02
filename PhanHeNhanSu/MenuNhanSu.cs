@@ -32,5 +32,13 @@ namespace R07_DATH2.PhanHeNhanSu
             ds.Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Luong_Thuong lt = new Luong_Thuong();
+            lt.Activate();
+            lt.Show();
+            this.Hide();
+        }
     }
 }

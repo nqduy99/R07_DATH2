@@ -73,7 +73,6 @@ namespace R07_DATH2.PhanHeNhanSu
                 tb_nam.Show();
             }
         }
-
         private void btn_xem_Click(object sender, EventArgs e)
         {
             if (cbb_Loai.SelectedIndex == 0) // ngày
@@ -86,11 +85,6 @@ namespace R07_DATH2.PhanHeNhanSu
                 DataTable dt = new DataTable();
                 dt.Load(dr_day);
                 dgv_thongke.DataSource = dt;
-                //if (dr_day.Read() == false)
-                //{
-                //    MessageBox.Show("Ngày không có đơn hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //    dtp_Ngay.Focus();
-                //}
                 dr_day.Close();
             }
             if (cbb_Loai.SelectedIndex == 1) // thang
