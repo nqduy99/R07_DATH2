@@ -33,53 +33,36 @@ namespace R07_DATH2
         }
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            try
+            
+            string tk = txtTenDangNhap.Text;
+            string mk = txtMatKhau.Text;
+            if(tk == "" || mk == "")
             {
-                string tk = txtTenDangNhap.Text;
-                string mk = txtMatKhau.Text;
-                string sqlcheckAccountNV = "select MaNV from Account_NV where Username = '" + tk + "' and Password = '" + mk + "'";
-                string sqlcheckAccountKH = "select MaKH from Account_KH where Username = '" + tk + "' and Password = '" + mk + "'";
-                SqlCommand checkAccountNV = new SqlCommand();
-                checkAccountNV.CommandText = sqlcheckAccountNV;
-                checkAccountNV.Connection = cnn;
-                SqlDataReader dataNV = checkAccountNV.ExecuteReader();
-
-                SqlCommand checkAccountKH = new SqlCommand();
-                checkAccountKH.CommandText = sqlcheckAccountKH;
-                checkAccountKH.Connection = cnn;
-                SqlDataReader dataKH = checkAccountKH.ExecuteReader();
-                if(dataKH.Read() == true)
-                {
-                    MessageBox.Show("Đăng nhập thành công");
-                }
-                if (dataNV.Read() == true)
-                {
-                    string sqlcheck = "select nv.ChucVu from NhanVien nv, Account_NV acc where nv.MaNV = acc.MaNV and acc.MaNV = '" + dataNV.ToString() + "'";
-                    SqlCommand checkChucVu = new SqlCommand();
-                    checkChucVu.CommandText = sqlcheck;
-                    checkChucVu.Connection = cnn;
-                    SqlDataReader dataCV = checkChucVu.ExecuteReader();
-                    if(dataCV.ToString() == "Quản trị")
-                    {
-                        MessageBox.Show("Đăng nhập thành công");
-                        AdminDashboard addb = new AdminDashboard();
-                        addb.Activate();
-                        addb.Show();
-                        this.Hide();
-                    }    
-                }
-                else
-                {
-                    MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác");
-                }
+                MessageBox.Show("Vui lòng Tên đăng nhập hoặc mật khẩu!");
             }
-            catch (Exception ex)
+            string sqlcheckAccountNV = "select MaNV from Account_NV where Username_NV = '" + tk + "' and Password_NV = '" + mk + "'";
+            string sqlcheckAccountKH = "select MaKH from Account_KH where Username = '" + tk + "' and Password = '" + mk + "'";
+            SqlCommand checkAccountNV = new SqlCommand();
+            checkAccountNV.CommandText = sqlcheckAccountNV;
+            checkAccountNV.Connection = cnn;
+            SqlDataReader dataNV = checkAccountNV.ExecuteReader();  
+
+            if (tk=="Admin" && mk=="123456")
             {
-                MessageBox.Show("Lối kết nối");
+                string sqlcheck = "select acc.Vaitro from NhanVien nv, Account_NV acc where nv.MaNV = acc.MaNV and acc.MaNV = '" + dataNV.ToString() + "'";
+                MessageBox.Show("Đăng nhập thành công");
+                AdminDashboard addb = new AdminDashboard();
+                addb.Activate();
+                addb.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác");
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnDangKy_Click(object sender, EventArgs e)
         {
 
         }

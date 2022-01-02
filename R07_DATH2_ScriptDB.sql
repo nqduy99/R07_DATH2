@@ -107,12 +107,12 @@ create table LSLuong(
 	NgayCapNhat date,
 	primary key(MaNV, Luong)
 )
-
+--drop table LSThuong
 Create table LSThuong(
 	MaNV varchar(10),
 	Thuong float,
 	Ngay date,
-	primary key (MaNV,Thuong)
+	primary key (MaNV,Thuong,Ngay)
 )
 
 -- Tạo khóa ngoại
@@ -217,7 +217,7 @@ end
 go
 
 --Cập nhật Lương Nhân Viên
-Create trigger updateLuong
+create trigger updateLuong
 on LSLuong
 for insert
 as
@@ -225,7 +225,7 @@ begin
 	update NhanVien
 	set Luong = (select i.Luong
 	from inserted i, NhanVien NV
-	where NV.MaNV = i.MaNV)
+	where NV.MaNV = i.MaNV) from NhanVien nv, inserted i where nv.MaNV = i.MaNV
 end
 
 --Them du lieu mau
@@ -244,3 +244,4 @@ select * from NhanVien
 select * from LoaiSanPham
 select * from SanPham
 select * from Account_NV
+select * from Account_KH
