@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using R07_DATH2.PhanHeNhanSu;
+using R07_DATH2.QuanLyKhachHang;
 
 namespace R07_DATH2.QuanLySanPham
 {
@@ -69,6 +70,14 @@ namespace R07_DATH2.QuanLySanPham
         private void MenuSanPham_Load(object sender, EventArgs e)
         {
             this.SetDesktopLocation(200, 100);
+        }
+
+        private void quảnLýKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuKhachHang mnkh = new MenuKhachHang();
+            mnkh.Activate();
+            mnkh.Show();
+            this.Hide();
         }
     }
 }

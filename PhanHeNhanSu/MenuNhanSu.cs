@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using R07_DATH2.QuanLySanPham;
+using R07_DATH2.QuanLyKhachHang;
 
 namespace R07_DATH2.PhanHeNhanSu
 {
@@ -68,6 +69,14 @@ namespace R07_DATH2.PhanHeNhanSu
             Login Thoat = new Login();
             Thoat.Activate();
             Thoat.Show();
+            this.Hide();
+        }
+
+        private void quảnLýKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MenuKhachHang mnkh = new MenuKhachHang();
+            mnkh.Activate();
+            mnkh.Show();
             this.Hide();
         }
     }

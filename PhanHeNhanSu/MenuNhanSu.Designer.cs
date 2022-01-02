@@ -40,6 +40,7 @@ namespace R07_DATH2.PhanHeNhanSu
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.QLSP = new System.Windows.Forms.ToolStripMenuItem();
             this.QLNhanSu = new System.Windows.Forms.ToolStripMenuItem();
+            this.quảnLýKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -148,7 +149,8 @@ namespace R07_DATH2.PhanHeNhanSu
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.QLSP,
-            this.QLNhanSu});
+            this.QLNhanSu,
+            this.quảnLýKháchHàngToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(600, 24);
@@ -168,6 +170,13 @@ namespace R07_DATH2.PhanHeNhanSu
             this.QLNhanSu.Size = new System.Drawing.Size(107, 20);
             this.QLNhanSu.Text = "Quản lý Nhân sự";
             this.QLNhanSu.Click += new System.EventHandler(this.QLNhanSu_Click);
+            // 
+            // quảnLýKháchHàngToolStripMenuItem
+            // 
+            this.quảnLýKháchHàngToolStripMenuItem.Name = "quảnLýKháchHàngToolStripMenuItem";
+            this.quảnLýKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(126, 20);
+            this.quảnLýKháchHàngToolStripMenuItem.Text = "Quản lý Khách hàng";
+            this.quảnLýKháchHàngToolStripMenuItem.Click += new System.EventHandler(this.quảnLýKháchHàngToolStripMenuItem_Click);
             // 
             // MenuNhanSu
             // 
@@ -203,5 +212,6 @@ namespace R07_DATH2.PhanHeNhanSu
         private System.Windows.Forms.ToolStripMenuItem QLSP;
         private System.Windows.Forms.ToolStripMenuItem QLNhanSu;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.ToolStripMenuItem quảnLýKháchHàngToolStripMenuItem;
     }
 }

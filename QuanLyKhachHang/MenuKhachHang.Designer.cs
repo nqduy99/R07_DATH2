@@ -1,7 +1,7 @@
 ﻿
-namespace R07_DATH2.QuanLySanPham
+namespace R07_DATH2.QuanLyKhachHang
 {
-    partial class MenuSanPham
+    partial class MenuKhachHang
     {
         /// <summary>
         /// Required designer variable.
@@ -32,15 +32,14 @@ namespace R07_DATH2.QuanLySanPham
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.QLSP = new System.Windows.Forms.ToolStripMenuItem();
             this.QLNhanSu = new System.Windows.Forms.ToolStripMenuItem();
+            this.quảnLýKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnThoat = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnCapNhatSP = new System.Windows.Forms.Button();
-            this.btnThemSP = new System.Windows.Forms.Button();
-            this.btn_XemDSSP = new System.Windows.Forms.Button();
+            this.btn_LSMH = new System.Windows.Forms.Button();
+            this.btn_TimkiemKH = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.quảnLýKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -72,11 +71,18 @@ namespace R07_DATH2.QuanLySanPham
             this.QLNhanSu.Text = "Quản lý Nhân sự";
             this.QLNhanSu.Click += new System.EventHandler(this.QLNhanSu_Click);
             // 
+            // quảnLýKháchHàngToolStripMenuItem
+            // 
+            this.quảnLýKháchHàngToolStripMenuItem.Name = "quảnLýKháchHàngToolStripMenuItem";
+            this.quảnLýKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(126, 20);
+            this.quảnLýKháchHàngToolStripMenuItem.Text = "Quản lý Khách hàng";
+            this.quảnLýKháchHàngToolStripMenuItem.Click += new System.EventHandler(this.quảnLýKháchHàngToolStripMenuItem_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Location = new System.Drawing.Point(28, 33);
+            this.groupBox1.Location = new System.Drawing.Point(28, 32);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -89,9 +95,8 @@ namespace R07_DATH2.QuanLySanPham
             this.groupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox2.Controls.Add(this.btnThoat);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.btnCapNhatSP);
-            this.groupBox2.Controls.Add(this.btnThemSP);
-            this.groupBox2.Controls.Add(this.btn_XemDSSP);
+            this.groupBox2.Controls.Add(this.btn_LSMH);
+            this.groupBox2.Controls.Add(this.btn_TimkiemKH);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(21, 25);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
@@ -104,7 +109,7 @@ namespace R07_DATH2.QuanLySanPham
             // btnThoat
             // 
             this.btnThoat.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnThoat.Location = new System.Drawing.Point(298, 194);
+            this.btnThoat.Location = new System.Drawing.Point(350, 174);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(76, 27);
@@ -123,71 +128,52 @@ namespace R07_DATH2.QuanLySanPham
             this.label2.TabIndex = 4;
             this.label2.Text = "Vui lòng chọn chức năng muốn thực hiện!!";
             // 
-            // btnCapNhatSP
+            // btn_LSMH
             // 
-            this.btnCapNhatSP.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnCapNhatSP.Location = new System.Drawing.Point(105, 194);
-            this.btnCapNhatSP.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCapNhatSP.Name = "btnCapNhatSP";
-            this.btnCapNhatSP.Size = new System.Drawing.Size(147, 27);
-            this.btnCapNhatSP.TabIndex = 3;
-            this.btnCapNhatSP.Text = "Cập nhật sản phẩm";
-            this.btnCapNhatSP.UseVisualStyleBackColor = false;
-            this.btnCapNhatSP.Click += new System.EventHandler(this.btnCapNhatSP_Click);
+            this.btn_LSMH.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btn_LSMH.Location = new System.Drawing.Point(205, 174);
+            this.btn_LSMH.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_LSMH.Name = "btn_LSMH";
+            this.btn_LSMH.Size = new System.Drawing.Size(141, 27);
+            this.btn_LSMH.TabIndex = 2;
+            this.btn_LSMH.Text = "Lịch sử mua hàng";
+            this.btn_LSMH.UseVisualStyleBackColor = false;
+            this.btn_LSMH.Click += new System.EventHandler(this.btn_LSMH_Click);
             // 
-            // btnThemSP
+            // btn_TimkiemKH
             // 
-            this.btnThemSP.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btnThemSP.Location = new System.Drawing.Point(267, 151);
-            this.btnThemSP.Margin = new System.Windows.Forms.Padding(2);
-            this.btnThemSP.Name = "btnThemSP";
-            this.btnThemSP.Size = new System.Drawing.Size(141, 27);
-            this.btnThemSP.TabIndex = 2;
-            this.btnThemSP.Text = "Thêm sản phẩm";
-            this.btnThemSP.UseVisualStyleBackColor = false;
-            this.btnThemSP.Click += new System.EventHandler(this.btnThemSP_Click);
-            // 
-            // btn_XemDSSP
-            // 
-            this.btn_XemDSSP.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btn_XemDSSP.Location = new System.Drawing.Point(105, 151);
-            this.btn_XemDSSP.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_XemDSSP.Name = "btn_XemDSSP";
-            this.btn_XemDSSP.Size = new System.Drawing.Size(147, 27);
-            this.btn_XemDSSP.TabIndex = 1;
-            this.btn_XemDSSP.Text = "Xem danh sách sản phẩm";
-            this.btn_XemDSSP.UseVisualStyleBackColor = false;
-            this.btn_XemDSSP.Click += new System.EventHandler(this.btn_XemDSSP_Click);
+            this.btn_TimkiemKH.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btn_TimkiemKH.Location = new System.Drawing.Point(65, 174);
+            this.btn_TimkiemKH.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_TimkiemKH.Name = "btn_TimkiemKH";
+            this.btn_TimkiemKH.Size = new System.Drawing.Size(136, 27);
+            this.btn_TimkiemKH.TabIndex = 1;
+            this.btn_TimkiemKH.Text = "Tìm kiếm khách hàng";
+            this.btn_TimkiemKH.UseVisualStyleBackColor = false;
+            this.btn_TimkiemKH.Click += new System.EventHandler(this.btn_TimkiemKH_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 22.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(135, 43);
+            this.label1.Location = new System.Drawing.Point(136, 42);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(251, 42);
+            this.label1.Size = new System.Drawing.Size(272, 42);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Quản lý Sản phẩm";
+            this.label1.Text = "Quản lý Khách hàng";
             // 
-            // quảnLýKháchHàngToolStripMenuItem
-            // 
-            this.quảnLýKháchHàngToolStripMenuItem.Name = "quảnLýKháchHàngToolStripMenuItem";
-            this.quảnLýKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(126, 20);
-            this.quảnLýKháchHàngToolStripMenuItem.Text = "Quản lý Khách hàng";
-            this.quảnLýKháchHàngToolStripMenuItem.Click += new System.EventHandler(this.quảnLýKháchHàngToolStripMenuItem_Click);
-            // 
-            // MenuSanPham
+            // MenuKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);
-            this.Name = "MenuSanPham";
-            this.Text = "MenuSanPham";
-            this.Load += new System.EventHandler(this.MenuSanPham_Load);
+            this.Name = "MenuKhachHang";
+            this.Text = "MenuKhachHang";
+            this.Load += new System.EventHandler(this.MenuKhachHang_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -203,14 +189,13 @@ namespace R07_DATH2.QuanLySanPham
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem QLSP;
         private System.Windows.Forms.ToolStripMenuItem QLNhanSu;
+        private System.Windows.Forms.ToolStripMenuItem quảnLýKháchHàngToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnCapNhatSP;
-        private System.Windows.Forms.Button btnThemSP;
-        private System.Windows.Forms.Button btn_XemDSSP;
+        private System.Windows.Forms.Button btn_LSMH;
+        private System.Windows.Forms.Button btn_TimkiemKH;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ToolStripMenuItem quảnLýKháchHàngToolStripMenuItem;
     }
 }

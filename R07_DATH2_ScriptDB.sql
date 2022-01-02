@@ -56,10 +56,11 @@ create table DonHang(
 	TongTien float,--Bằng 0
 	primary key (MaDH)
 )
+
+--drop table CT_DonHang
 create table CT_DonHang (
 	MaDH varchar(10),
 	MaSP varchar(10),
-	MaNV varchar(10),
 	SoLuong int,
 	GiaBan float,
 	GiaGiam float,

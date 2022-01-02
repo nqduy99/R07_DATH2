@@ -85,6 +85,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyKhachHang\LichSuMuaHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyKhachHang\LichSuMuaHang.Designer.cs">
+      <DependentUpon>LichSuMuaHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyKhachHang\MenuKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyKhachHang\MenuKhachHang.Designer.cs">
+      <DependentUpon>MenuKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyKhachHang\TimkiemKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyKhachHang\TimkiemKhachHang.Designer.cs">
+      <DependentUpon>TimkiemKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySanPham\CapNhatSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +148,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="QuanLyKhachHang\LichSuMuaHang.resx">
+      <DependentUpon>LichSuMuaHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyKhachHang\MenuKhachHang.resx">
+      <DependentUpon>MenuKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyKhachHang\TimkiemKhachHang.resx">
+      <DependentUpon>TimkiemKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\CapNhatSanPham.resx">
       <DependentUpon>CapNhatSanPham.cs</DependentUpon>
     </EmbeddedResource>
