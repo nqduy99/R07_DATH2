@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using R07_DATH2.QuanLySanPham;
+using R07_DATH2.PhanHeNhanSu;
 
 namespace R07_DATH2
 {
@@ -107,6 +108,14 @@ namespace R07_DATH2
             CapNhatSanPham cnsp = new CapNhatSanPham();
             cnsp.Activate();
             cnsp.Show();
+            this.Hide();
+        }
+
+        private void QLNhanSu_Click(object sender, EventArgs e)
+        {
+            MenuNhanSu mnns = new MenuNhanSu();
+            mnns.Activate();
+            mnns.Show();
             this.Hide();
         }
     }

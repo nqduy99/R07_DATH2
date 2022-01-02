@@ -40,5 +40,10 @@ namespace R07_DATH2.PhanHeNhanSu
             lt.Show();
             this.Hide();
         }
+
+        private void MenuNhanSu_Load(object sender, EventArgs e)
+        {
+            this.SetDesktopLocation(200, 100);
+        }
     }
 }

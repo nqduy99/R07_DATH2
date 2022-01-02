@@ -39,6 +39,7 @@
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.btnTimKiemSP = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.QLNhanSu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +47,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.QLSP});
+            this.QLSP,
+            this.QLNhanSu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(726, 24);
@@ -151,6 +153,13 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Mã/Tên Sản Phẩm:";
             // 
+            // QLNhanSu
+            // 
+            this.QLNhanSu.Name = "QLNhanSu";
+            this.QLNhanSu.Size = new System.Drawing.Size(107, 20);
+            this.QLNhanSu.Text = "Quản lý Nhân sự";
+            this.QLNhanSu.Click += new System.EventHandler(this.QLNhanSu_Click);
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,5 +200,6 @@
         private System.Windows.Forms.TextBox txtTenSP;
         private System.Windows.Forms.Button btnTimKiemSP;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem QLNhanSu;
     }
 }
