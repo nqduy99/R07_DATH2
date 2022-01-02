@@ -240,5 +240,13 @@ namespace R07_DATH2.PhanHeNhanSu
             }
 
         }
+
+        private void btnQuayLai_Click(object sender, EventArgs e)
+        {
+            MenuNhanSu mnns = new MenuNhanSu();
+            mnns.Activate();
+            mnns.Show();
+            this.Hide();
+        }
     }
 }

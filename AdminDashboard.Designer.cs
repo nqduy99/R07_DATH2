@@ -30,6 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.QLSP = new System.Windows.Forms.ToolStripMenuItem();
+            this.QLNhanSu = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvSanPham = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnThemSP = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.btnTimKiemSP = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.QLNhanSu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             this.SuspendLayout();
@@ -61,6 +61,13 @@
             this.QLSP.Size = new System.Drawing.Size(116, 20);
             this.QLSP.Text = "Quản lý Sản Phẩm";
             this.QLSP.Click += new System.EventHandler(this.quảnLýNhânViênToolStripMenuItem_Click);
+            // 
+            // QLNhanSu
+            // 
+            this.QLNhanSu.Name = "QLNhanSu";
+            this.QLNhanSu.Size = new System.Drawing.Size(107, 20);
+            this.QLNhanSu.Text = "Quản lý Nhân sự";
+            this.QLNhanSu.Click += new System.EventHandler(this.QLNhanSu_Click);
             // 
             // dgvSanPham
             // 
@@ -152,13 +159,6 @@
             this.label2.Size = new System.Drawing.Size(101, 13);
             this.label2.TabIndex = 11;
             this.label2.Text = "Mã/Tên Sản Phẩm:";
-            // 
-            // QLNhanSu
-            // 
-            this.QLNhanSu.Name = "QLNhanSu";
-            this.QLNhanSu.Size = new System.Drawing.Size(107, 20);
-            this.QLNhanSu.Text = "Quản lý Nhân sự";
-            this.QLNhanSu.Click += new System.EventHandler(this.QLNhanSu_Click);
             // 
             // AdminDashboard
             // 

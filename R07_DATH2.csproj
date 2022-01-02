@@ -91,6 +91,12 @@
     <Compile Include="QuanLySanPham\CapNhatSanPham.Designer.cs">
       <DependentUpon>CapNhatSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLySanPham\MenuSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLySanPham\MenuSanPham.Designer.cs">
+      <DependentUpon>MenuSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLySanPham\ThemSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </Compile>
     <EmbeddedResource Include="QuanLySanPham\CapNhatSanPham.resx">
       <DependentUpon>CapNhatSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLySanPham\MenuSanPham.resx">
+      <DependentUpon>MenuSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLySanPham\ThemSanPham.resx">
       <DependentUpon>ThemSanPham.cs</DependentUpon>

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using R07_DATH2.QuanLySanPham;
 
 namespace R07_DATH2
 {
@@ -51,9 +52,9 @@ namespace R07_DATH2
             {
                 string sqlcheck = "select acc.Vaitro from NhanVien nv, Account_NV acc where nv.MaNV = acc.MaNV and acc.MaNV = '" + dataNV.ToString() + "'";
                 MessageBox.Show("Đăng nhập thành công");
-                AdminDashboard addb = new AdminDashboard();
-                addb.Activate();
-                addb.Show();
+                MenuSanPham mnsp = new MenuSanPham();
+                mnsp.Activate();
+                mnsp.Show();
                 this.Hide();
             }
             else

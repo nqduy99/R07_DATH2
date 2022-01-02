@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using R07_DATH2.QuanLySanPham;
 
 namespace R07_DATH2.PhanHeNhanSu
 {
@@ -44,6 +45,30 @@ namespace R07_DATH2.PhanHeNhanSu
         private void MenuNhanSu_Load(object sender, EventArgs e)
         {
             this.SetDesktopLocation(200, 100);
+        }
+
+        private void QLSP_Click(object sender, EventArgs e)
+        {
+            MenuSanPham mnsp = new MenuSanPham();
+            mnsp.Activate();
+            mnsp.Show();
+            this.Hide();
+        }
+
+        private void QLNhanSu_Click(object sender, EventArgs e)
+        {
+            MenuNhanSu mnns = new MenuNhanSu();
+            mnns.Activate();
+            mnns.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Login Thoat = new Login();
+            Thoat.Activate();
+            Thoat.Show();
+            this.Hide();
         }
     }
 }

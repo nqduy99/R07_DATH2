@@ -45,7 +45,7 @@ namespace R07_DATH2.QuanLySanPham
             this.btnCapNhatSP = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCapNhatMaSP = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dtpHanSuDungSP
@@ -185,20 +185,24 @@ namespace R07_DATH2.QuanLySanPham
             this.txtCapNhatMaSP.Size = new System.Drawing.Size(169, 20);
             this.txtCapNhatMaSP.TabIndex = 30;
             // 
-            // label1
+            // label12
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(289, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 13);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "CẬP NHẬT SẢN PHẨM";
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Palatino Linotype", 22.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label12.Location = new System.Drawing.Point(207, 20);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(271, 42);
+            this.label12.TabIndex = 46;
+            this.label12.Text = "Cập Nhật Sản Phẩm";
             // 
             // CapNhatSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 343);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.dtpHanSuDungSP);
             this.Controls.Add(this.txtMaLSPCapNhatSP);
             this.Controls.Add(this.txtDonGiaSP);
@@ -215,7 +219,6 @@ namespace R07_DATH2.QuanLySanPham
             this.Controls.Add(this.btnCapNhatSP);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCapNhatMaSP);
-            this.Controls.Add(this.label1);
             this.Name = "CapNhatSanPham";
             this.Text = "CapNhatSanPham";
             this.Load += new System.EventHandler(this.CapNhatSanPham_Load);
@@ -242,6 +245,6 @@ namespace R07_DATH2.QuanLySanPham
         private System.Windows.Forms.Button btnCapNhatSP;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCapNhatMaSP;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label12;
     }
 }

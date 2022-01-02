@@ -51,9 +51,9 @@ namespace R07_DATH2
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Login Thoat = new Login();
-            Thoat.Activate();
-            Thoat.Show();
+            MenuSanPham mnsp = new MenuSanPham();
+            mnsp.Activate();
+            mnsp.Show();
             this.Hide();
         }
 
@@ -97,9 +97,9 @@ namespace R07_DATH2
 
         private void quảnLýNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AdminDashboard addb = new AdminDashboard();
-            addb.Activate();
-            addb.Show();
+            MenuSanPham mnsp = new MenuSanPham();
+            mnsp.Activate();
+            mnsp.Show();
             this.Hide();
         }
 

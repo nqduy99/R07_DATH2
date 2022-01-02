@@ -29,7 +29,6 @@ namespace R07_DATH2.QuanLySanPham
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.txtThemMaSP = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,17 +53,10 @@ namespace R07_DATH2.QuanLySanPham
             this.txtMaLSPThemSP = new System.Windows.Forms.TextBox();
             this.dgvLoaiSanPham = new System.Windows.Forms.DataGridView();
             this.dtpHanSuDungSP = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiSanPham)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(429, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "THÊM SẢN PHẨM";
             // 
             // txtThemMaSP
             // 
@@ -272,11 +264,37 @@ namespace R07_DATH2.QuanLySanPham
             this.dtpHanSuDungSP.TabIndex = 28;
             this.dtpHanSuDungSP.Value = new System.DateTime(2021, 1, 1, 0, 0, 0, 0);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Palatino Linotype", 22.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label12.Location = new System.Drawing.Point(392, 19);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(220, 42);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "Thêm Sản Phẩm";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Palatino Linotype", 22.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label13.Location = new System.Drawing.Point(41, 19);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(280, 42);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Thêm Loại Sản Phẩm";
+            // 
             // ThemSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 343);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.dtpHanSuDungSP);
             this.Controls.Add(this.dgvLoaiSanPham);
             this.Controls.Add(this.txtMaLSPThemSP);
@@ -301,7 +319,6 @@ namespace R07_DATH2.QuanLySanPham
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtThemMaSP);
-            this.Controls.Add(this.label1);
             this.Name = "ThemSanPham";
             this.Text = "ThemSanPham";
             this.Load += new System.EventHandler(this.ThemSanPham_Load);
@@ -312,8 +329,6 @@ namespace R07_DATH2.QuanLySanPham
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtThemMaSP;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
@@ -338,5 +353,7 @@ namespace R07_DATH2.QuanLySanPham
         private System.Windows.Forms.TextBox txtMaLSPThemSP;
         private System.Windows.Forms.DataGridView dgvLoaiSanPham;
         private System.Windows.Forms.DateTimePicker dtpHanSuDungSP;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
