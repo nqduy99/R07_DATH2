@@ -40,7 +40,7 @@ namespace R07_DATH2.QuanLyKhachHang
             // txtTimKiemTen
             // 
             this.txtTimKiemTen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiemTen.Location = new System.Drawing.Point(121, 45);
+            this.txtTimKiemTen.Location = new System.Drawing.Point(131, 32);
             this.txtTimKiemTen.Name = "txtTimKiemTen";
             this.txtTimKiemTen.Size = new System.Drawing.Size(229, 29);
             this.txtTimKiemTen.TabIndex = 10;
@@ -48,7 +48,7 @@ namespace R07_DATH2.QuanLyKhachHang
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 54);
+            this.label1.Location = new System.Drawing.Point(34, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 13);
             this.label1.TabIndex = 11;
@@ -56,7 +56,7 @@ namespace R07_DATH2.QuanLyKhachHang
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(356, 49);
+            this.btnTimKiem.Location = new System.Drawing.Point(366, 36);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
             this.btnTimKiem.TabIndex = 12;
@@ -67,14 +67,14 @@ namespace R07_DATH2.QuanLyKhachHang
             // dgvKhachHang
             // 
             this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKhachHang.Location = new System.Drawing.Point(27, 91);
+            this.dgvKhachHang.Location = new System.Drawing.Point(37, 78);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.Size = new System.Drawing.Size(323, 216);
             this.dgvKhachHang.TabIndex = 13;
             // 
             // btnQuayLai
             // 
-            this.btnQuayLai.Location = new System.Drawing.Point(484, 284);
+            this.btnQuayLai.Location = new System.Drawing.Point(489, 271);
             this.btnQuayLai.Name = "btnQuayLai";
             this.btnQuayLai.Size = new System.Drawing.Size(75, 23);
             this.btnQuayLai.TabIndex = 14;
