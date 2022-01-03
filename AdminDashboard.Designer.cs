@@ -40,6 +40,7 @@
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.btnTimKiemSP = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             this.SuspendLayout();
@@ -91,7 +92,7 @@
             // 
             // btnThemSP
             // 
-            this.btnThemSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnThemSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnThemSP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnThemSP.Location = new System.Drawing.Point(621, 183);
             this.btnThemSP.Name = "btnThemSP";
@@ -129,7 +130,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(79, 23);
             this.button5.TabIndex = 8;
-            this.button5.Text = "Thoát";
+            this.button5.Text = "Quay lại";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -142,7 +143,7 @@
             // 
             // btnTimKiemSP
             // 
-            this.btnTimKiemSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnTimKiemSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnTimKiemSP.Location = new System.Drawing.Point(495, 126);
             this.btnTimKiemSP.Name = "btnTimKiemSP";
             this.btnTimKiemSP.Size = new System.Drawing.Size(79, 23);
@@ -160,11 +161,23 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Mã/Tên Sản Phẩm:";
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnRefresh.Location = new System.Drawing.Point(495, 244);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(79, 23);
+            this.btnRefresh.TabIndex = 12;
+            this.btnRefresh.Text = "Tải lại trang";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // AdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 279);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnTimKiemSP);
             this.Controls.Add(this.txtTenSP);
@@ -201,5 +214,6 @@
         private System.Windows.Forms.Button btnTimKiemSP;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem QLNhanSu;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

@@ -35,7 +35,7 @@ namespace R07_DATH2.QuanLyKhachHang
         
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            string sqlTimKiem = "select * from KhachHang where TenKH = '" + txtTimKiemTen.Text + "'";
+            string sqlTimKiem = "select * from KhachHang where HoTen = '" + txtTimKiemTen.Text + "'";
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = sqlTimKiem;
             cmd.Connection = cnn;

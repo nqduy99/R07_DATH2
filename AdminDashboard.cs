@@ -118,5 +118,13 @@ namespace R07_DATH2
             mnns.Show();
             this.Hide();
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            AdminDashboard addb = new AdminDashboard();
+            addb.Activate();
+            addb.Show();
+            this.Hide();
+        }
     }
 }
